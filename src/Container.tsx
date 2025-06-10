@@ -15,11 +15,11 @@ function Container(props: ContainerProps) {
     }
     return <>
         <div style={{ 
-            backgroundImage:"url(images.jpg)",
+            backgroundImage:"url(rei.jpg)",
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             padding: "10px",
-            color: "#322182", 
+            color: "#cbbfff", 
             width: "480px", 
             height: "250px",
             borderRadius: "30px", 
@@ -27,7 +27,7 @@ function Container(props: ContainerProps) {
             marginTop:"50px"}}>
             <h1>{props.nome} Big Black Cook</h1>
 
-            <p><b>Texto:{texto}</b></p>
+            <div style={{width: "300px"}}><p><b>Texto:{texto}</b></p></div>
             <input type="text" placeholder="Mostrar texto" onChange={trataInput} />
             <button>Mudar Texto</button>
                     </div>
