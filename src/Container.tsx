@@ -1,23 +1,37 @@
 //States 
-//Hooks
+import { useState } from "react"
+
+//Hooks -> iniciam com "use"
+//só pode usar ele no começo do componente
 
 //Props  são informações que você pode passar para um componente
-interface ContainerProps{
-    nome:string
+interface ContainerProps {
+    nome: string
 }
-function Container(props:ContainerProps){
-    let contador = 10
-    function Mudar(){
-        contador = 20
+function Container(props: ContainerProps) {
+    const [texto, setTexto] = useState("Coloque um texto")
+    function trataInput(event:React.ChangeEvent<HTMLInputElement>) {
+        setTexto(event.currentTarget.value)
     }
-    return<>
-        <div style={{ backgroundColor: "#322182", padding: "10px", color: "#cbbfff", width: "300px" }}>
-        <h1>{props.nome} Big Black Cook</h1>
-        Valor Contador:{contador}
-        <button onClick={Mudar}>Mudar</button>
-        <img src="images.jpg" alt="Grande Cozinheiro Negro"/>
-        </div>
-        </>
+    return <>
+        <div style={{ 
+            backgroundImage:"url(images.jpg)",
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            padding: "10px",
+            color: "#322182", 
+            width: "480px", 
+            height: "250px",
+            borderRadius: "30px", 
+            border:"#322182 3px solid", 
+            marginTop:"50px"}}>
+            <h1>{props.nome} Big Black Cook</h1>
+
+            <p><b>Texto:{texto}</b></p>
+            <input type="text" placeholder="Mostrar texto" onChange={trataInput} />
+            <button>Mudar Texto</button>
+                    </div>
+    </>
 }
 
 export default Container
