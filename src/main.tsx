@@ -4,13 +4,15 @@ import { createRoot } from 'react-dom/client'
 
 
 
-import Container from './Container.tsx'
+//import Container from './Container.tsx'
+import Pagina from './Pagina.tsx'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <Container nome='Header'/>
+    {/*<Container nome='Header'/>
     <Container nome='Body'/>
-    <Container nome='Footer'/>
+    <Container nome='Footer'/>*/}
+    <Pagina/>
 
   </StrictMode>,
 )
