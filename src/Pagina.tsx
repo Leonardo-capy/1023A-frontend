@@ -1,4 +1,5 @@
 import { useState } from "react"
+import './Pagina.css'
 interface ProdutosState {
     id: number,
     nome: string,
@@ -51,6 +52,7 @@ function Pagina() {
             <header>
                 <div>Logo</div>
                 <nav>
+                    
                     <ul>
                         <li>
                             <a href="">Home</a>
@@ -64,7 +66,7 @@ function Pagina() {
                     </ul>
                 </nav>
             </header>
-            <main>
+            <main >
                 <div className="container-listagem">
                     {produtos.map(produto => {
                         return (
@@ -79,15 +81,16 @@ function Pagina() {
                                     {produto.categoria}
                                 </div>
                             </div>
+                            
                         )
                     })}
                 </div>
                 <div className="container-cadastro">
                     <form onSubmit={TrataCadastro}>
-                        <input type="text" name="id" id="id" onChange={trataId}/>
-                        <input type="text" name="nome" id="nome" onChange={trataNome}/>
-                        <input type="text" name="preco" id="preco" onChange={trataPreco}/>
-                        <input type="text" name="categoria" id="categoria" onChange={trataCategoria}/>
+                        <input type="text" name="id" id="id" placeholder="Adicione ID" onChange={trataId}/>
+                        <input type="text" name="nome" id="nome" placeholder="Adicione Nome" onChange={trataNome}/>
+                        <input type="number" name="preco" id="preco" placeholder="Adicione Preço" onChange={trataPreco}/>
+                        <input type="text" name="categoria" id="categoria" placeholder="Adicione Categoria" onChange={trataCategoria}/>
                         <input type="submit" value="Cadastrar" />
                     </form>
 
